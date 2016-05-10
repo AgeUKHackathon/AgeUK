@@ -5,7 +5,7 @@ export default class Theme extends React.Component {
   render () {
     return (
       <div>
-        <Question />
+        <h1>Theme</h1>
       </div>
     )
   }
