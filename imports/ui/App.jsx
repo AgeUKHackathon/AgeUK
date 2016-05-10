@@ -34,7 +34,7 @@ export default class App extends Component {
       <div>
         <div className='row'>
           <div className='col-sm-9 col-sm-offset-1'>
-            <Nav stacked='' info={topics} initializedTab={'Maintenance'} onChange={this.changeTopic} />
+            <Nav stacked='' info={topics} initializedTab={'Maintenance'} />
           </div>
         </div>
         <div className='row'>
