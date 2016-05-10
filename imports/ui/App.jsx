@@ -1,23 +1,34 @@
 import React, { Component } from 'react'
 import Nav from './Navigation/index.jsx'
 import Summary from './Summary/index.jsx'
+import Housing from './Housing.jsx'
 
 const topics = ['Maintenance', 'Affordability', 'Sustainability', 'Warmth']
 const themes = ['Housing', 'Money', 'Care/Help', 'Health', 'Social', 'Family']
 
 const sideBarStyle = {
   ul: {
-
   }
 }
 
 const topBarStyle = {
   ul: {
-
   }
 }
 
+const components = {
+
+}
+
+
 export default class App extends Component {
+  constructor(){
+    super()
+    this.state = {
+      componentView: 'Housing',
+      topicView: 'Maintenance'
+    }
+  }
   render () {
     return (
       <div>
@@ -33,7 +44,7 @@ export default class App extends Component {
           <div className='col-md-9 col-sm-9 col-xs-9'>
             <div className='container'>
               <div className='row'>
-                <Summary />
+                <Housing />
               </div>
             </div>
           </div>
