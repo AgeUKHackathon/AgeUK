@@ -1,5 +1,5 @@
 import React from 'react'
 
 export default (props) => {
-  return <li><a href={props.link}>{props.title}</a></li>
+  return <li><a href={props.url}>{props.title}</a></li>
 }

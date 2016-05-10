@@ -1,5 +1,10 @@
 import React from 'react'
 
 export default (props) => {
-  return <li>{props.solution}</li>
+  return (
+    <div>
+      <li style={{display:'inline-block'}}>{props.solution}</li>
+      <button>Remove</button>
+    </div>
+  )
 }
