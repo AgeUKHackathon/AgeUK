@@ -1,6 +1,6 @@
 import React from 'react';
 import { browserHistory, Router, Route, IndexRoute } from 'react-router';
-import Theme from './Theme.jsx';
+import Housing from './Housing.jsx';
 import App from './App.jsx';
 
 export default class Routes extends React.Component {
@@ -9,7 +9,7 @@ export default class Routes extends React.Component {
           <div>
             <Router history={browserHistory}>
               <Route path="/" component={App}>
-                <IndexRoute component={Theme} />
+                <IndexRoute component={Housing} />
               </Route>
             </Router>
           </div>
