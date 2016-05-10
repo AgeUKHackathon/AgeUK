@@ -1,28 +1,34 @@
 import React, {Component} from 'react'
-import {Nav, NavItem} from 'react-bootstrap'
 
 class Navigation extends Component {
   constructor() {
     super()
-    this.state = {activeTab: 1}
+    this.state = {activeTab: 'Maintenance'}
     this.handleSelect = this.handleSelect.bind(this)
+    this.checkActive = this.checkActive.bind(this)
   }
 
-  handleSelect(eventKey) {
-    console.log(eventKey);
-    this.setState({activeTab: eventKey})
+  handleSelect(e, theme) {
+    console.log(e)
+    this.setState({activeTab: theme})
   }
 
+  checkActive (theme) {
+    return this.state.activeTab === theme ? 'active' : ''
+  }
   render() {
     return (
-      <Nav bsStyle="tabs" activeKey={this.state.activeTab} onSelect={this.handleSelect}>
-        <NavItem eventKey={1}>Maintenance</NavItem>
-        <NavItem eventKey={2} title="Item">Affordability</NavItem>
-        <NavItem eventKey={3}>Suitability</NavItem>
-        <NavItem eventKey={4}>Warmth</NavItem>
-      </Nav>
+      <ul className={`nav nav-tabs ${this.props.stacked}`} style={this.props.style.ul}>
+        {this.props.info.map(theme => {
+          return (
+            <li className={this.checkActive(theme)}>
+              <a onClick={(e) => this.handleSelect(e, theme)}>{theme}</a>
+            </li>
+          )
+        })}
+      </ul>
     )
   }
 }
 
-export default Navigation 
+export default Navigation
