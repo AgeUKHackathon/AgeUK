@@ -3,9 +3,12 @@ import React, {Component} from 'react'
 class Navigation extends Component {
   constructor() {
     super()
-    this.state = {activeTab: 'Maintenance'}
+    this.state = {activeTab: ''}
     this.handleSelect = this.handleSelect.bind(this)
     this.checkActive = this.checkActive.bind(this)
+  }
+  componentDidMount() {
+    this.setState({activeTab: this.props.initializedTab})
   }
 
   handleSelect(e, theme) {

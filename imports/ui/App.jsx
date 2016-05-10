@@ -7,14 +7,13 @@ const themes = ['Housing', 'Money', 'Care/Help', 'Health', 'Social', 'Family']
 
 const sideBarStyle = {
   ul: {
-    width: '15%',
+
   }
 }
 
 const topBarStyle = {
   ul: {
-    width: '70%',
-    margin: '0 auto'
+
   }
 }
 
@@ -24,12 +23,12 @@ export default class App extends Component {
       <div>
         <div className='row'>
           <div className='col-sm-9 col-sm-offset-1'>
-            <Nav stacked='' info={topics} />
+            <Nav stacked='' info={topics} initializedTab={'Maintenance'} />
           </div>
         </div>
         <div className='row'>
           <div className='col-md-1 col-sm-1 col-xs-1'>
-            <Nav stacked='nav-stacked' info={themes} />
+            <Nav stacked='nav-stacked' info={themes} initializedTab={'Housing'}/>
           </div>
           <div className='col-md-9 col-sm-9 col-xs-9'>
             <div className='container'>
