@@ -22,9 +22,9 @@ class Navigation extends Component {
   render() {
     return (
       <ul className={`nav nav-tabs ${this.props.stacked}`}>
-        {this.props.info.map(theme => {
+        {this.props.info.map((theme, i) => {
           return (
-            <li className={this.checkActive(theme)}>
+            <li key={i} className={this.checkActive(theme)}>
               <a onClick={(e) => this.handleSelect(e, theme)}>{theme}</a>
             </li>
           )

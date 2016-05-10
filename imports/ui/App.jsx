@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import Nav from './Navigation/index.jsx'
 import Summary from './Summary/index.jsx'
-import Housing from './Housing.jsx'
+import Theme from './Theme/Theme.jsx'
 
-const topics = ['Maintenance', 'Affordability', 'Sustainability', 'Warmth']
+const topics = ['Basic', 'Maintenance', 'Affordability', 'Sustainability', 'Warmth']
 const themes = ['Housing', 'Money', 'Care/Help', 'Health', 'Social', 'Family']
 
 const sideBarStyle = {
@@ -34,7 +34,7 @@ export default class App extends Component {
       <div>
         <div className='row'>
           <div className='col-sm-9 col-sm-offset-1'>
-            <Nav stacked='' info={topics} initializedTab={'Maintenance'} />
+            <Nav stacked='' info={topics} initializedTab={'Maintenance'} onChange={this.changeTopic} />
           </div>
         </div>
         <div className='row'>
@@ -44,7 +44,7 @@ export default class App extends Component {
           <div className='col-md-9 col-sm-9 col-xs-9'>
             <div className='container'>
               <div className='row'>
-                <Housing />
+                <Theme topic={this.state.topicView} />
               </div>
             </div>
           </div>
