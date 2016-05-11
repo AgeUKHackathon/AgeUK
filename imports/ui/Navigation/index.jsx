@@ -5,12 +5,12 @@ const styles = {
     maxWidth: '35%',
     float: 'right'
   },
-  li: {
-    height: '10vh'
-  },
   a: {
-    height: '10vh',
+    fontSize: '1.8em',
+    fontFamily: "'Alegreya Sans', 'sans-serif'"
+
   }
+
 }
 
 class Navigation extends Component {
@@ -48,7 +48,7 @@ class Navigation extends Component {
                   </a>
                 </li>
               : <li className={this.checkActive(theme)} key={theme}>
-                  <a onClick={(e) => this.handleSelect(e, theme)}>{theme}</a>
+                  <a onClick={(e) => this.handleSelect(e, theme)} style={styles.a}>{theme}</a>
                 </li>
           )
         })}
