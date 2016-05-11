@@ -4,15 +4,18 @@ import Summary from './Summary/index.jsx'
 import Theme from './Theme/Theme.jsx'
 
 const topics = ['Basic', 'Affordability', 'Maintenance', 'Suitability', 'Warmth']
-const themes = ['Housing', 'Money', 'Care/Help', 'Health', 'Social', 'Family']
+const themes = ['Housing', 'Money', 'Care/Help', 'Health', 'Social', 'Family', 'Actions']
 const themeIcons = {
   Housing: 'housing.png',
   Money: 'money.png',
   'Care/Help': 'care.png',
   'Health': 'health.png',
   Social: 'social.png',
-  Family: 'family.png'
+  Family: 'family.png',
+  Actions: 'actions.png'
 }
+
+
 
 const sideBarStyle = {
   ul: {
