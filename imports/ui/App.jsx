@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
 import Nav from './Navigation/index.jsx'
 import Summary from './Summary/index.jsx'
-import Topic from './Topic.jsx'
-import {Basic, Affordability, Maintenance, Sustainability, Warmth} from './Questions/hcDb.js'
+import Theme from './Theme/Theme.jsx'
 
-const topics = ['Basic', 'Affordability', 'Maintenance', 'Sustainability', 'Warmth']
-const qLists = {Basic, Affordability, Maintenance, Sustainability, Warmth}
+const topics = ['Basic', 'Affordability', 'Maintenance', 'Suitability', 'Warmth']
 const themes = ['Housing', 'Money', 'Care/Help', 'Health', 'Social', 'Family']
 const themeIcons = {
   Housing: 'housing.png',
@@ -88,10 +86,7 @@ export default class App extends Component {
           <div className={`${width.top.m} ${width.top.sm}`}>
             <div className='container'>
               <div className='row'>
-                <Topic
-                  topic={this.state.currentTopic}
-                  topicQs={qLists[this.state.currentTopic]}
-                />
+                <Theme topic={this.state.currentTopic} />
               </div>
             </div>
           </div>
