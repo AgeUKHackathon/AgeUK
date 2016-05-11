@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 // import Resource from './ResourceItem.jsx'
 import Action from './ActionItem.jsx'
 import Edit from './EditItem.jsx'
+import Add from './Add.jsx'
 
 const actionHeight = '7vh'
 
@@ -45,6 +46,10 @@ class Box extends Component {
             </div>
           )
         })}
+        <Add
+          actions={this.props.actions}
+          changeState={this.props.changeState}
+        />
       </div>
     )
   }
