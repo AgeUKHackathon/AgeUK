@@ -1,22 +1,34 @@
 import React, {Component} from 'react'
 
+const styles = {
+  img: {
+    maxWidth: '35%',
+    float: 'right'
+  }
+}
+
 class Navigation extends Component {
   constructor() {
     super()
-    this.state = {activeTab: ''}
     this.handleSelect = this.handleSelect.bind(this)
     this.checkActive = this.checkActive.bind(this)
   }
   componentDidMount() {
-    this.setState({activeTab: this.props.initializedTab})
+    this.props.changeState({
+      currentTopic: this.props.initializedTopic,
+      currentTheme: this.props.initializedTheme
+    })
   }
 
   handleSelect(e, theme) {
-    this.props.type === 'topic' ? this.props.changeState({topicView: theme}) : this.props.changeState({activeTab: theme})
+    this.props.type === 'topic'
+    ? this.props.changeState({currentTopic: theme})
+    : this.props.changeState({currentTheme: theme})
   }
 
   checkActive (theme) {
-    return this.state.activeTab === theme ? 'active' : ''
+    return this.props.currentTheme === theme || this.props.currentTopic === theme
+    ? 'active' : ''
   }
   render() {
     return (
