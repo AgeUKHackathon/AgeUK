@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 import Nav from './Navigation/index.jsx'
 import Summary from './Summary/index.jsx'
 import Topic from './Topic.jsx'
-import {Basic, Affordability} from './Questions/hcDb.js'
+import {Basic, Affordability, Maintenance, Sustainability, Warmth} from './Questions/hcDb.js'
 
-const topics = ['Basic','Affordability', 'Maintenance', 'Sustainability', 'Warmth']
-const qLists = {Basic: Basic, Affordability: Affordability}
+const topics = ['Basic', 'Affordability', 'Maintenance', 'Sustainability', 'Warmth']
+const qLists = {Basic, Affordability, Maintenance, Sustainability, Warmth}
 const themes = ['Housing', 'Money', 'Care/Help', 'Health', 'Social', 'Family']
 const themeIcons = {
   Housing: 'family.png',
