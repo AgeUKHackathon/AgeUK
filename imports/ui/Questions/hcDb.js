@@ -33,8 +33,53 @@ export const Affordability = [
     options: ['yes', 'no']
   },
   {
-    title: 'Living companions (1/2)',
+    title: 'Benefits',
     question: 'Have you checked that you\'re getting the benefits you are entitled to?',
+    answerType: 'radio',
+    options: ['Yes', 'No']
+  },
+]
+
+export const Maintenance = [
+  {
+    title: 'Maintaining',
+    question: 'Do you need help to maintain?',
+    answerType: 'radio',
+    options: ['yes', 'no']
+  },
+  {
+    title: 'maintain',
+    question: 'blah bah maintain',
+    answerType: 'radio',
+    options: ['Yes', 'No']
+  },
+]
+
+export const Sustainability = [
+  {
+    title: 'Sustaining',
+    question: 'Do you need help to sustain?',
+    answerType: 'radio',
+    options: ['yes', 'no']
+  },
+  {
+    title: 'sustain',
+    question: 'blah bah sustain',
+    answerType: 'radio',
+    options: ['Yes', 'No']
+  },
+]
+
+export const Warmth = [
+  {
+    title: 'Warming up',
+    question: 'Are you cold?',
+    answerType: 'radio',
+    options: ['yes', 'no']
+  },
+  {
+    title: 'warmth',
+    question: 'blah bah warmth',
     answerType: 'radio',
     options: ['Yes', 'No']
   },

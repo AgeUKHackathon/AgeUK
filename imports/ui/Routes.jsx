@@ -1,14 +1,14 @@
-import React from 'react';
-import { browserHistory, Router, Route, IndexRoute } from 'react-router';
-import Topic from './Topic.jsx';
-import App from './App.jsx';
+import React from 'react'
+import { browserHistory, Router, Route, IndexRoute } from 'react-router'
+import Topic from './Topic.jsx'
+import App from './App.jsx'
 
 export default class Routes extends React.Component {
-    render() {
+    render () {
       return (
         <div>
           <Router history={browserHistory}>
-            <Route path="/" component={App}>
+            <Route path='/' component={App}>
               <IndexRoute component={Topic} />
             </Route>
           </Router>

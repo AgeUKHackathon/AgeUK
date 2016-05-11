@@ -2,11 +2,19 @@ import React, { Component } from 'react'
 import Nav from './Navigation/index.jsx'
 import Summary from './Summary/index.jsx'
 import Topic from './Topic.jsx'
-import {Basic, Affordability} from './Questions/hcDb.js'
+import {Basic, Affordability, Maintenance, Sustainability, Warmth} from './Questions/hcDb.js'
 
-const topics = ['Basic','Affordability', 'Maintenance', 'Sustainability', 'Warmth']
-const qLists = {Basic: Basic, Affordability: Affordability}
+const topics = ['Basic', 'Affordability', 'Maintenance', 'Sustainability', 'Warmth']
+const qLists = {Basic, Affordability, Maintenance, Sustainability, Warmth}
 const themes = ['Housing', 'Money', 'Care/Help', 'Health', 'Social', 'Family']
+const themeIcons = {
+  Housing: 'family.png',
+  Money: 'family.png',
+  'Care/Help': 'family.png',
+  'Health': 'health.png',
+  Social: 'social.png',
+  Family: 'family.png'
+}
 
 const sideBarStyle = {
   ul: {
@@ -18,35 +26,72 @@ const topBarStyle = {
   }
 }
 
+const width = {
+  top: {
+    m: 'col-md-9',
+    sm: 'col-sm-9',
+    xs: 'col-xs-9',
+    offset: 'col-sm-offset-2'
+  },
+  side: {
+    m: 'col-md-2',
+    sm: 'col-sm-2',
+    xs: 'col-xs-9',
+    offset: ''
+  }
+}
 
 export default class App extends Component {
-  constructor(){
+  constructor () {
     super()
     this.state = {
-      componentView: 'Housing',
-      topicView: 'Basic'
+      currentTheme: 'Housing',
+      currentTopic: 'Basic'
     }
     this.changeState = this.changeState.bind(this)
   }
-  changeState(newState){
+  changeState (newState) {
     this.setState(newState)
   }
   render () {
     return (
       <div>
         <div className='row'>
-          <div className='col-sm-9 col-sm-offset-1'>
-            <Nav stacked='' info={topics} initializedTab={'Basic'} type='topic' changeState={this.changeState}/>
+          <div className={`${width.top.m} ${width.top.sm} ${width.top.offset}`}>
+            <Nav
+              stacked=''
+              initializedTheme={'Housing'}
+              initializedTopic={'Basic'}
+              type='topic'
+              info={topics}
+              icons={null}
+              currentTopic={this.state.currentTopic}
+              currentTheme={this.state.currentTheme}
+              changeState={this.changeState}
+            />
           </div>
         </div>
         <div className='row'>
-          <div className='col-md-1 col-sm-1 col-xs-1'>
-            <Nav stacked='nav-stacked' info={themes} initializedTab={'Housing'} type='theme' changeState={this.changeState}/>
+          <div className={`${width.side.m} ${width.side.sm} ${width.side.offset}`}>
+            <Nav
+              stacked='nav-stacked'
+              initializedTheme={'Housing'}
+              initializedTopic={'Basic'}
+              type='theme'
+              info={themes}
+              icons={themeIcons}
+              currentTopic={this.state.currentTopic}
+              currentTheme={this.state.currentTheme}
+              changeState={this.changeState}
+            />
           </div>
-          <div className='col-md-9 col-sm-9 col-xs-9'>
+          <div className={`${width.top.m} ${width.top.sm}`}>
             <div className='container'>
               <div className='row'>
-                <Topic topicQs={qLists[this.state.topicView]}/>
+                <Topic
+                  topic={this.state.currentTopic}
+                  topicQs={qLists[this.state.currentTopic]}
+                />
               </div>
             </div>
           </div>
