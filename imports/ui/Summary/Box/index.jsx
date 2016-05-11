@@ -14,7 +14,8 @@ const styles = {
     lineHeight: actionHeight
   },
   edit: {
-    display: 'none'
+    display: 'none',
+    lineHeight: actionHeight
   },
   th: {
     fontWeight: 'bold',

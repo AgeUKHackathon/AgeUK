@@ -52,19 +52,19 @@ export default class App extends Component {
           id: 1,
           action: 'get a dog',
           owner: 'John',
-          dueDate: '12/05/2016'
+          dueDate: '2016-05-12'
         },
         {
           id: 2,
           action: 'get help',
           owner: 'John',
-          dueDate: '12/05/2016'
+          dueDate: '2016-07-10'
         },
         {
           id: 3,
           action: 'help John',
           owner: 'Jane',
-          dueDate: '13/05/2016'
+          dueDate: '2016-08-13'
         },
       ],
     }

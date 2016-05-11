@@ -1,20 +1,32 @@
 import React, {Component} from 'react'
 import ReactDom from 'react-dom'
+import uuid from 'uuid'
+
+const dateConverter = (ISODate) => {
+  // "2016-05-06T10:04:05.101Z"
+  const unformattedDate = ISODate.split('T')[0].split('-')
+  const YY = unformattedDate[0]
+  const MM = unformattedDate[1]
+  const DD = unformattedDate[2]
+  return `${YY}-${MM}-${DD}`
+}
 
 const emptyAction = {
-  dueDate: '',
+  dueDate: dateConverter((new Date).toISOString()),
   owner: '',
   action: ''
 }
+const inputSize = '14px'
+
 export default class AddItem extends Component {
   constructor () {
     super()
     this.state = emptyAction
     this.add = this.add.bind(this)
   }
-  add (e, id) {
+  add (e) {
     const newAction = {
-      id: id,
+      id: uuid.v1(),
       dueDate: this.state.dueDate,
       owner: this.state.owner,
       action: this.state.action
@@ -27,7 +39,7 @@ export default class AddItem extends Component {
       <div className='row' style={this.props.style}>
         <div className='col-md-2 col-sm-2 col-xs-2'>
           <input type='date'
-            style={{width:'100%'}}
+            style={{width:'100%', fontSize: inputSize}}
             value={this.state.dueDate}
             onChange={(e) => {
               const newDate = e.target.value
@@ -37,6 +49,7 @@ export default class AddItem extends Component {
         </div>
         <div className='col-md-2 col-sm-2 col-xs-2'>
           <textarea
+            style={{width:'100%', fontSize: inputSize, lineHeight: inputSize}}
             value={this.state.owner}
             onChange={(e) => {
               const newOwner = e.target.value
@@ -46,6 +59,7 @@ export default class AddItem extends Component {
         </div>
         <div className='col-md-4 col-sm-4 col-xs-4'>
           <textarea
+            style={{width:'100%', fontSize: inputSize, lineHeight: inputSize}}
             value={this.state.action}
             onChange={(e) => {
               const newAction = e.target.value
@@ -53,10 +67,11 @@ export default class AddItem extends Component {
             }
           />
         </div>
-        <div className='col-md-1 col-sm-1 col-xs-1'>
+        <div className='col-md-2 col-sm-2 col-xs-2'>
           <button type="button" className="btn btn-primary"
+            style={{width: '75%'}}
             onClick={this.add}>
-            Save
+            Add
           </button>
         </div>
       </div>
