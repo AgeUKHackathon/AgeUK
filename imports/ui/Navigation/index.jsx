@@ -3,7 +3,11 @@ import React, {Component} from 'react'
 const styles = {
   img: {
     maxWidth: '35%',
+    height: '10',
     float: 'right'
+  },
+  li: {
+    height: '2vh'
   }
 }
 
@@ -36,7 +40,7 @@ class Navigation extends Component {
         {this.props.info.map(theme => {
           return (
             this.props.type === 'theme'
-              ? <li className={this.checkActive(theme)} key={theme}>
+              ? <li className={this.checkActive(theme)} key={theme} style={styles.li}>
                   <a onClick={(e) => this.handleSelect(e, theme)} >
                     {theme} <img src={this.props.icons[theme]} style={styles.img}/>
                   </a>
