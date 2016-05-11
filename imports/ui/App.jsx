@@ -89,7 +89,12 @@ export default class App extends Component {
           <div className={`${width.top.m} ${width.top.sm}`}>
             <div className='container'>
               <div className='row'>
-                <Theme topic={this.state.currentTopic} />
+                {this.state.currentTheme === 'Actions'
+                  ? <Summary
+                      actions={this.state.actions}
+                      changeState={this.changeState}/>
+                  : <Theme topic={this.state.currentTopic} />
+                }
               </div>
             </div>
           </div>

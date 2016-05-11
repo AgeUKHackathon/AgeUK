@@ -9,10 +9,11 @@ const solutions = ['dkhgkhg', 'dhjkhkg', 'hdjkhsgk']
 class Summary extends Component {
   render () {
     return (
-      <div>
-        <Box content={resources} heading='Resources'/>
-        <Box content={solutions} heading='Solutions'/>
-      </div>
+      <Box
+        heading='Actions'
+        actions={this.props.actions}
+        changeState={this.props.changeState}
+      />
     )
   }
 }
