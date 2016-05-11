@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Nav from './Navigation/index.jsx'
 import Summary from './Summary/index.jsx'
 import Theme from './Theme/Theme.jsx'
+import NavBar from './Navbar/navbar.jsx'
 
 const topics = ['Basic', 'Affordability', 'Maintenance', 'Suitability', 'Warmth']
 const themes = ['Housing', 'Money', 'Care/Help', 'Health', 'Social', 'Family']
@@ -54,6 +55,7 @@ export default class App extends Component {
   render () {
     return (
       <div>
+        <NavBar />
         <div className='row'>
           <div className={`${width.top.m} ${width.top.sm} ${width.top.offset}`}>
             <Nav
