@@ -9,7 +9,11 @@ const styles = {
     fontSize: '1.8em',
     fontFamily: "'Alegreya Sans', 'sans-serif'"
 
+  },
+  img: {
+    width: '15%'
   }
+
 
 }
 

@@ -3,17 +3,21 @@ import Nav from './Navigation/index.jsx'
 import Summary from './Summary/index.jsx'
 import Theme from './Theme/Theme.jsx'
 import NavBar from './Navbar/navbar.jsx'
+import Notepad from './Notepad/nodepad.jsx'
 
 const topics = ['Basic', 'Affordability', 'Maintenance', 'Suitability', 'Warmth']
-const themes = ['Housing', 'Money', 'Care/Help', 'Health', 'Social', 'Family', 'Actions']
+const themes = ['Profile', 'Housing', 'Money', 'Care/Help', 'Health', 'Social', 'Family', 'Outcomes', 'Actions', 'Notepad']
 const themeIcons = {
+  Profile: 'profile.svg',
   Housing: 'housing.png',
   Money: 'money.png',
   'Care/Help': 'care.png',
   'Health': 'health.png',
   Social: 'social.png',
   Family: 'family.png',
-  Actions: 'actions.png'
+  Outcomes: 'outcomes.svg',
+  Actions: 'actions.png',
+  Notepad: 'notepad.svg'
 }
 
 const sideBarStyle = {
@@ -28,13 +32,13 @@ const topBarStyle = {
 
 const width = {
   top: {
-    m: 'col-md-10',
+    m: 'col-md-9',
     sm: 'col-sm-10',
     xs: 'col-xs-9',
     offset: 'col-sm-offset-2'
   },
   side: {
-    m: 'col-md-2',
+    m: 'col-md-3',
     sm: 'col-sm-2',
     xs: 'col-xs-3',
     offset: ''
@@ -111,7 +115,9 @@ export default class App extends Component {
             ? <Summary
                 actions={this.state.actions}
                 changeState={this.changeState}/>
-            : <Theme topic={this.state.currentTopic} />
+              : this.state.currentTheme === 'Notepad'
+                ? <Notepad />
+                : <Theme topic={this.state.currentTopic} />
           }
 
         </div>

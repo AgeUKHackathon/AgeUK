@@ -21,8 +21,7 @@ const styles = {
 export default () => {
   return (
     <div style={styles.div}>
-      <h1 style={styles.h1}>You're having a conversation with John Doe</h1>
-      <button style={styles.button}>edit</button>
+      <h1 style={styles.h1}>You're having a conversation with John</h1>
     </div>
   )
 }
