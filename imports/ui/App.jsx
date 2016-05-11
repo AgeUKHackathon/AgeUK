@@ -112,9 +112,11 @@ export default class App extends Component {
             ? <Summary
                 actions={this.state.actions}
                 changeState={this.changeState}/>
-            : <Theme topic={this.state.currentTopic} />
+            : <Theme
+                topic={this.state.currentTopic}
+                actionsList={this.state.actions}
+                changeState={this.changeState} />
           }
-
         </div>
       </div>
     </div>
