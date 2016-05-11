@@ -164,14 +164,21 @@ const data = {
         ],
         maintenance: [
             {
-                question: 'Have you got good locks on windows and main entry doors?',
-                category: 'Crime & prevention',
+                question: 'Do you have someone you trust who can do repairs?',
+                category: 'Trusted help / traders',
                 type: 'boolean',
                 prompts: [
-                    { actions: [8] },
+                    { actions: [9] },
                 ],
             },
-            { question: 'q4' },
+            {
+                question: 'Do you find it easy or difficult to manage daily tasks?',
+                category: 'Daily living tasks',
+                type: 'boolean',
+                prompts: [
+                    { actions: [3] },
+                ],
+            },
         ],
         warmth: [
             {
