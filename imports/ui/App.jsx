@@ -51,6 +51,7 @@ export default class App extends Component {
     this.state = {
       currentTheme: 'Housing',
       currentTopic: 'Basic',
+      notes: '',
       actions: [
         {
           id: 1,
@@ -117,7 +118,7 @@ export default class App extends Component {
                 actions={this.state.actions}
                 changeState={this.changeState}/>
               : this.state.currentTheme === 'Notepad'
-                ? <Notepad />
+                ? <Notepad notes={this.state.notes} changeState={this.changeState} />
                 : <Theme topic={this.state.currentTopic}
                 actionsList={this.state.actions}
                 changeState={this.changeState} />
