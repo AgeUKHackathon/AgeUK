@@ -47,7 +47,27 @@ export default class App extends Component {
     super()
     this.state = {
       currentTheme: 'Housing',
-      currentTopic: 'Basic'
+      currentTopic: 'Basic',
+      actions: [
+        {
+          id: 1,
+          action: 'get a dog',
+          owner: 'John',
+          dueDate: '12/05/2016'
+        },
+        {
+          id: 2,
+          action: 'get help',
+          owner: 'John',
+          dueDate: '12/05/2016'
+        },
+        {
+          id: 3,
+          action: 'help John',
+          owner: 'Jane',
+          dueDate: '13/05/2016'
+        },
+      ],
     }
     this.changeState = this.changeState.bind(this)
   }

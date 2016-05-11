@@ -1,9 +1,30 @@
 import React, {Component} from 'react'
-import Resource from './ResourceItem.jsx'
-import Solution from './SolutionItem.jsx'
+// import Resource from './ResourceItem.jsx'
+import Action from './ActionItem.jsx'
+import Edit from './EditItem.jsx'
 
-const styleUl = {
-  listStyleType: 'none'
+const actionHeight = '7vh'
+
+const styles = {
+  tr: {
+    fontStyle: 'italics',
+    fontSize: '1.2em',
+    height: actionHeight,
+    lineHeight: actionHeight
+  },
+  edit: {
+    display: 'none'
+  },
+  th: {
+    fontWeight: 'bold',
+    fontSize: '1.8em'
+  }
+}
+
+const header = {
+  dueDate: 'Due Date',
+  owner: 'Owner',
+  action: 'Action'
 }
 
 class Box extends Component {
