@@ -39,7 +39,7 @@ class Navigation extends Component {
   render() {
     return (
       <ul className={`nav nav-tabs ${this.props.stacked}`}>
-        {this.props.info.map(theme => {
+        {this.props.info.map((theme, i) => {
           return (
             this.props.type === 'theme'
               ? <li className={this.checkActive(theme)} key={theme} style={styles.li}>
