@@ -80,6 +80,7 @@ export default class App extends Component {
         <div className='row'>
           <div className={`${width.top.m} ${width.top.sm} ${width.top.offset}`}>
             <Nav
+              id='topbar'
               stacked=''
               initializedTheme={'Housing'}
               initializedTopic={'Basic'}
