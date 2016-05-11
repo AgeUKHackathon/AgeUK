@@ -5,14 +5,15 @@ import Theme from './Theme/Theme.jsx'
 import NavBar from './Navbar/navbar.jsx'
 
 const topics = ['Basic', 'Affordability', 'Maintenance', 'Suitability', 'Warmth']
-const themes = ['Housing', 'Money', 'Care/Help', 'Health', 'Social', 'Family']
+const themes = ['Housing', 'Money', 'Care/Help', 'Health', 'Social', 'Family', 'Actions']
 const themeIcons = {
   Housing: 'housing.png',
   Money: 'money.png',
   'Care/Help': 'care.png',
   'Health': 'health.png',
   Social: 'social.png',
-  Family: 'family.png'
+  Family: 'family.png',
+  Actions: 'actions.png'
 }
 
 const sideBarStyle = {
@@ -45,7 +46,27 @@ export default class App extends Component {
     super()
     this.state = {
       currentTheme: 'Housing',
-      currentTopic: 'Basic'
+      currentTopic: 'Basic',
+      actions: [
+        {
+          id: 1,
+          action: 'get a dog',
+          owner: 'John',
+          dueDate: '12/05/2016'
+        },
+        {
+          id: 2,
+          action: 'get help',
+          owner: 'John',
+          dueDate: '12/05/2016'
+        },
+        {
+          id: 3,
+          action: 'help John',
+          owner: 'Jane',
+          dueDate: '13/05/2016'
+        },
+      ],
     }
     this.changeState = this.changeState.bind(this)
   }
@@ -86,7 +107,12 @@ export default class App extends Component {
             />
           </div>
           <div className={`${width.top.m} ${width.top.sm} ${width.top.xs}`}>
-                <Theme topic={this.state.currentTopic} />
+          {this.state.currentTheme === 'Actions'
+            ? <Summary
+                actions={this.state.actions}
+                changeState={this.changeState}/>
+            : <Theme topic={this.state.currentTopic} />
+          }
 
         </div>
       </div>

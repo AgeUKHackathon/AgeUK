@@ -32,6 +32,16 @@ body {
   background-color: #F1F2F4;
 }
 
-.conditional {
+
+.conditional, .prompt {
   display: none;
+}
+
+#prompt {
+  padding: 10px;
+  width: 75%;
+  background: #CAF7E2;
+}
+#prompt .prompt-link {
+  margin-left: 5px;
 }
