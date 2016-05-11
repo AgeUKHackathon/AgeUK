@@ -47,6 +47,7 @@ class Box extends Component {
           )
         })}
         <Add
+          style={styles.tr}
           actions={this.props.actions}
           changeState={this.props.changeState}
         />
