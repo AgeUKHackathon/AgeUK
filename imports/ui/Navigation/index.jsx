@@ -56,7 +56,7 @@ class Navigation extends Component {
             this.props.type === 'theme'
               ? <li className={this.checkActive(theme)} key={theme} style={styles.li}>
                   <a onClick={(e) => this.handleSelect(e, theme)} style={styles.a}>
-                    {theme} <img src={this.props.icons[theme]} style={styles.img}/>
+                    <img src={this.props.icons[theme]} style={styles.img}/>{theme} 
                   </a>
                 </li>
               : <li className={this.checkActive(theme)} key={theme}>

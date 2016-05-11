@@ -8,8 +8,7 @@ const styles = {
   },
   h1: {
     display: 'inline',
-    color: 'white',
-    textWeight: '400'
+    color: 'white'
   },
   button: {
     marginLeft: '2em',

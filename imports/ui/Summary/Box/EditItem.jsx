@@ -34,6 +34,7 @@ export default class EditItem extends Component {
     document.getElementById(`edit-${id}`).style.display = 'none'
   }
   render () {
+    console.log(this.state.dueDate)
     return (
       <div className='row' style={this.props.style} id={`edit-${this.props.info.id}`}>
         <div className='col-md-2 col-sm-2 col-xs-2'>
