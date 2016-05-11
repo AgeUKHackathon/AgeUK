@@ -12,8 +12,7 @@ class Navigation extends Component {
   }
 
   handleSelect(e, theme) {
-    console.log(e)
-    this.setState({activeTab: theme})
+    this.props.type === 'topic' ? this.props.changeState({topicView: theme}) : this.props.changeState({activeTab: theme})
   }
 
   checkActive (theme) {

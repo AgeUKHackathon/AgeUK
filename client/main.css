@@ -1,4 +1,4 @@
 /* CSS declarations go here */
-#affordability, #suitability, #emergencies, #warmth {
+.conditional {
   display: none;
 }
