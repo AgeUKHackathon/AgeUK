@@ -8,9 +8,9 @@ const topics = ['Basic', 'Affordability', 'Maintenance', 'Sustainability', 'Warm
 const qLists = {Basic, Affordability, Maintenance, Sustainability, Warmth}
 const themes = ['Housing', 'Money', 'Care/Help', 'Health', 'Social', 'Family']
 const themeIcons = {
-  Housing: 'family.png',
-  Money: 'family.png',
-  'Care/Help': 'family.png',
+  Housing: 'housing.png',
+  Money: 'money.png',
+  'Care/Help': 'care.png',
   'Health': 'health.png',
   Social: 'social.png',
   Family: 'family.png'
