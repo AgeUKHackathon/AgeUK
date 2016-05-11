@@ -29,6 +29,7 @@ const header = {
 
 class Box extends Component {
   render () {
+    console.log(this.props.actions);
     return (
       <div>
         <h1>{this.props.heading}</h1>

@@ -31,7 +31,7 @@ export default class Question extends React.Component {
               <div className="prompt">
                 {this.props.prompts ?
                 <div>
-                  {this.props.prompts.slice(0,Math.floor(Math.random()*3)).map((prompt, i) => <Prompt key={i} {...prompt} />)}
+                  {this.props.prompts.slice(0,Math.floor(Math.random()*3)).map((prompt, i) => <Prompt key={i} {...prompt} actionsList={this.props.actionsList} changeState={this.props.changeState}/>)}
                 </div> : ''}
               </div>
             </div>
