@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 // import Resource from './ResourceItem.jsx'
 import Action from './ActionItem.jsx'
 import Edit from './EditItem.jsx'
+import Add from './Add.jsx'
 
 const actionHeight = '7vh'
 
@@ -13,7 +14,8 @@ const styles = {
     lineHeight: actionHeight
   },
   edit: {
-    display: 'none'
+    display: 'none',
+    lineHeight: actionHeight
   },
   th: {
     fontWeight: 'bold',
@@ -45,6 +47,11 @@ class Box extends Component {
             </div>
           )
         })}
+        <Add
+          style={styles.tr}
+          actions={this.props.actions}
+          changeState={this.props.changeState}
+        />
       </div>
     )
   }

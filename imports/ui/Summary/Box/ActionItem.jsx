@@ -28,16 +28,18 @@ export default class ActionItem extends Component {
           {this.props.info.action}
         </div>
         {!this.props.info.id ? ''
-          : <div className='col-md-1 col-sm-1 col-xs-1'>
+          : <div className='col-md-2 col-sm-2 col-xs-2'>
               <button type="button" className="btn btn-warning"
+                style={{width: '75%'}}
                 onClick={(e) => {this.edit(e, this.props.info.id)}}>
                 Edit
               </button>
             </div>
         }
         {!this.props.info.id ? ''
-          : <div className='col-md-1 col-sm-1 col-xs-1'>
+          : <div className='col-md-2 col-sm-2 col-xs-2'>
               <button type="button" className="btn btn-danger"
+                style={{width: '75%'}}
                 onClick={(e) => {this.remove(e, this.props.info.id)}}>
                 Remove
               </button>

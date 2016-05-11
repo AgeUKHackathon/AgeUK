@@ -45,3 +45,6 @@ body {
 #prompt .prompt-link {
   margin-left: 5px;
 }
+textarea {
+  resize: none;
+}
