@@ -7,6 +7,14 @@ import {Basic, Affordability} from './Questions/hcDb.js'
 const topics = ['Basic','Affordability', 'Maintenance', 'Sustainability', 'Warmth']
 const qLists = {Basic: Basic, Affordability: Affordability}
 const themes = ['Housing', 'Money', 'Care/Help', 'Health', 'Social', 'Family']
+const themeIcons = {
+  Housing: 'family.png',
+  Money: 'family.png',
+  'Care/Help': 'family.png',
+  'Health': 'health.png',
+  Social: 'social.png',
+  Family: 'family.png'
+}
 
 const sideBarStyle = {
   ul: {

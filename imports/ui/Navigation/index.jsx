@@ -35,9 +35,15 @@ class Navigation extends Component {
       <ul className={`nav nav-tabs ${this.props.stacked}`}>
         {this.props.info.map(theme => {
           return (
-            <li className={this.checkActive(theme)}>
-              <a onClick={(e) => this.handleSelect(e, theme)}>{theme}</a>
-            </li>
+            this.props.type === 'theme'
+              ? <li className={this.checkActive(theme)} key={theme}>
+                  <a onClick={(e) => this.handleSelect(e, theme)} >
+                    {theme} <img src={this.props.icons[theme]} style={styles.img}/>
+                  </a>
+                </li>
+              : <li className={this.checkActive(theme)} key={theme}>
+                  <a onClick={(e) => this.handleSelect(e, theme)}>{theme}</a>
+                </li>
           )
         })}
       </ul>
