@@ -3,11 +3,13 @@ import React, {Component} from 'react'
 const styles = {
   img: {
     maxWidth: '35%',
-    height: '10',
     float: 'right'
   },
   li: {
-    height: '2vh'
+    height: '10vh'
+  },
+  a: {
+    height: '10vh',
   }
 }
 
@@ -41,7 +43,7 @@ class Navigation extends Component {
           return (
             this.props.type === 'theme'
               ? <li className={this.checkActive(theme)} key={theme} style={styles.li}>
-                  <a onClick={(e) => this.handleSelect(e, theme)} >
+                  <a onClick={(e) => this.handleSelect(e, theme)} style={styles.a}>
                     {theme} <img src={this.props.icons[theme]} style={styles.img}/>
                   </a>
                 </li>
