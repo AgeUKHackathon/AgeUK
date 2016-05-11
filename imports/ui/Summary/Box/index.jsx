@@ -37,7 +37,7 @@ class Box extends Component {
         <Action info={header} style={styles.th} />
         {this.props.actions.map((item, i) => {
           return (
-            <div key={i}>
+            <div className='row' key={i}>
               <Action key='action' info={item} style={styles.tr}
                 actions={this.props.actions}
                 changeState={this.props.changeState}/>
