@@ -34,15 +34,15 @@ const width = {
 }
 
 export default class App extends Component {
-  constructor(){
+  constructor () {
     super()
     this.state = {
-      componentView: 'Housing',
-      topicView: 'Basic'
+      currentTheme: 'Housing',
+      currentTopic: 'Basic'
     }
     this.changeState = this.changeState.bind(this)
   }
-  changeState(newState){
+  changeState (newState) {
     this.setState(newState)
   }
   render () {
