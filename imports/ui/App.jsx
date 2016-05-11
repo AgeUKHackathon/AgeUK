@@ -56,19 +56,19 @@ export default class App extends Component {
           id: 1,
           action: 'get a dog',
           owner: 'John',
-          dueDate: '12/05/2016'
+          dueDate: '2016-05-12'
         },
         {
           id: 2,
           action: 'get help',
           owner: 'John',
-          dueDate: '12/05/2016'
+          dueDate: '2016-07-10'
         },
         {
           id: 3,
           action: 'help John',
           owner: 'Jane',
-          dueDate: '13/05/2016'
+          dueDate: '2016-08-13'
         },
       ],
     }
@@ -84,6 +84,7 @@ export default class App extends Component {
         <div className='row'>
           <div className={`${width.top.m} ${width.top.sm} ${width.top.offset}`}>
             <Nav
+              id='topbar'
               stacked=''
               initializedTheme={'Housing'}
               initializedTopic={'Basic'}
@@ -117,9 +118,11 @@ export default class App extends Component {
                 changeState={this.changeState}/>
               : this.state.currentTheme === 'Notepad'
                 ? <Notepad />
-                : <Theme topic={this.state.currentTopic} />
-          }
+                : <Theme topic={this.state.currentTopic}
+                actionsList={this.state.actions}
+                changeState={this.changeState} />
 
+          }
         </div>
       </div>
     </div>

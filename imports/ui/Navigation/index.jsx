@@ -33,7 +33,15 @@ class Navigation extends Component {
   handleSelect(e, theme) {
     this.props.type === 'topic'
     ? this.props.changeState({currentTopic: theme})
-    : this.props.changeState({currentTheme: theme})
+    : theme === 'Actions'
+      ? (() => {
+          this.props.changeState({currentTheme: theme})
+          document.getElementById('topbar').style.display = 'none'
+        })()
+      : (() => {
+          this.props.changeState({currentTheme: theme})
+          document.getElementById('topbar').style.display = 'block'
+        })()
   }
 
   checkActive (theme) {
@@ -42,7 +50,7 @@ class Navigation extends Component {
   }
   render() {
     return (
-      <ul className={`nav nav-tabs ${this.props.stacked}`}>
+      <ul className={`nav nav-tabs ${this.props.stacked}`} id={this.props.id}>
         {this.props.info.map((theme, i) => {
           return (
             this.props.type === 'theme'
