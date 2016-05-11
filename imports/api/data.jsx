@@ -24,14 +24,33 @@ const data = {
         ],
         affordability: [
             {
+                question: "Are you worried about where you're going to be living",
+                category: 'Homelessness',
+                type: 'boolean',
+                prompts: [
+                    { actions: [5] },
+                    { actions: [4] },
+                ],
+            },
+            {
                 question: 'Can you afford your housing?',
                 category: 'Bills & big jobs',
                 type: 'boolean',
+                prompts: [
+                    { actions: [5] },
+                    { actions: [7] },
+                    { actions: [10] },
+                ],
             },
             {
                 question: "Have you checked you're getting the benefits you're entitled to?",
                 category: 'Lack income and benefits',
                 type: 'boolean',
+                prompts: [
+                    { actions: [5] },
+                    { actions: [7] },
+                    { actions: [10] },
+                ],
             },
         ],
         suitability: [
@@ -40,13 +59,117 @@ const data = {
                 category: 'Size & type & options',
                 type: 'boolean',
                 conditional: 'If not, why not?',
+                prompts: [
+                    {
+                        prompt: 'House is too big',
+                        actions: [1],
+                    },
+                    {
+                        prompt: 'Need more support at home and considering moving',
+                        actions: [2],
+                    },
+                    {
+                        prompt: 'Need more support at home and wish to stay at current property',
+                        actions: [3],
+                    },
+                    {
+                        prompt: 'Risk of homelessness',
+                        actions: [5],
+                    },
+                    {
+                        prompt: 'Problems with neighbours/noise',
+                        actions: [6],
+                    },
+                    {
+                        prompt: 'Worried about home not being safe and/or secure',
+                        actions: [8],
+                    },
+                    {
+                        prompt: 'Maintenance and repairs',
+                        actions: [9],
+                    },
+                    {
+                        prompt: 'Struggling to manage bills (incl. cold)',
+                        actions: [10],
+                    },
+                    {
+                        prompt: 'Looking to move to a care home',
+                        actions: [11],
+                    },
+                    {
+                        prompt: 'Issue related to living in a Park Home',
+                        actions: [12],
+                    },
+                ],
             },
-            { question: 'q6' },
+            {
+                question: 'Are you comfortable at home?',
+                category: 'Support / manageable',
+                type: 'boolean',
+                conditional: 'If not, why not?',
+                prompts: [
+                    {
+                        prompt: 'House is too big to manage',
+                        actions: [1],
+                    },
+                    {
+                        prompt: 'Need more support at home and considering moving',
+                        actions: [2],
+                    },
+                    {
+                        prompt: 'Need more support at home and wish to stay at current property',
+                        actions: [3],
+                    },
+                    {
+                        prompt: 'Problems with neighbours/noise',
+                        actions: [6],
+                    },
+                    {
+                        prompt: 'Worried about home not being safe and/or secure',
+                        actions: [8],
+                    },
+                    {
+                        prompt: 'Maintenance and repairs',
+                        actions: [9],
+                    },
+                    {
+                        prompt: 'Struggling to manage bills (incl. cold)',
+                        actions: [10],
+                    },
+                    {
+                        prompt: 'Looking to move to a care home',
+                        actions: [11],
+                    },
+                    {
+                        prompt: 'Issue related to living in a Park Home',
+                        actions: [12],
+                    },
+                ],
+            },
+            {
+                question: 'Can you use everything easily?',
+                category: 'Support / manageable',
+                type: 'boolean',
+                conditional: 'If not, why not?',
+            },
+            {
+                question: 'Are you able to use all of your house?',
+                category: 'Use all house?',
+                type: 'boolean',
+                conditional: 'If not, why not?',
+                prompts: [
+                    { actions: [1] },
+                ],
+            },
         ],
         maintenance: [
             {
-                question: 'q3',
+                question: 'Have you got good locks on windows and main entry doors?',
+                category: 'Crime & prevention',
                 type: 'boolean',
+                prompts: [
+                    { actions: [8] },
+                ],
             },
             { question: 'q4' },
         ],
