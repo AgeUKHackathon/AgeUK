@@ -1,12 +1,15 @@
 import React from 'react';
+import Prompt from './Prompt';
 
 export default class Question extends React.Component {
     displayConditionalQuestion() {
         $("input[type='radio']:checked").each((i, el) => {
             if (el.value === 'No') {
-                $(el).parent().next('.conditional').css('display', 'block');
+                $(el).parent().next().css('display', 'block');
+                $(el).parent().parent().next().css('display', 'block');
             } else {
-                $('.conditional').css('display', 'none');
+                $(el).parent().next().next().css('display', 'none');
+                $(el).parent().parent().next().css('display', 'none');
             }
         });
     }
@@ -24,6 +27,12 @@ export default class Question extends React.Component {
                     <p>{this.props.conditional}</p>
                     <textarea />
                   </div> : ''}
+              </div>
+              <div className="prompt">
+                {this.props.prompts ?
+                <div>
+                  {this.props.prompts.slice(0,Math.floor(Math.random()*3)).map((prompt, i) => <Prompt key={i} {...prompt} />)}
+                </div> : ''}
               </div>
             </div>
             :
