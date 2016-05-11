@@ -1,4 +1,10 @@
 /* CSS declarations go here */
-/*#affordability, #suitability, #emergencies, #warmth {
-  display: none;
-}*/
+
+h1 {
+  font-weight: bold;
+  font-family: 'Alegreya Sans', sans-serif;
+}
+
+body {
+  max-width: 100vw;
+}

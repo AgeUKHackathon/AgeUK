@@ -28,15 +28,15 @@ const topBarStyle = {
 
 const width = {
   top: {
-    m: 'col-md-9',
-    sm: 'col-sm-9',
+    m: 'col-md-10',
+    sm: 'col-sm-10',
     xs: 'col-xs-9',
     offset: 'col-sm-offset-2'
   },
   side: {
     m: 'col-md-2',
     sm: 'col-sm-2',
-    xs: 'col-xs-9',
+    xs: 'col-xs-3',
     offset: ''
   }
 }
@@ -72,7 +72,7 @@ export default class App extends Component {
           </div>
         </div>
         <div className='row'>
-          <div className={`${width.side.m} ${width.side.sm} ${width.side.offset}`}>
+          <div className={`${width.side.m} ${width.side.sm} ${width.side.xs} ${width.side.offset}`}>
             <Nav
               stacked='nav-stacked'
               initializedTheme={'Housing'}
@@ -85,15 +85,11 @@ export default class App extends Component {
               changeState={this.changeState}
             />
           </div>
-          <div className={`${width.top.m} ${width.top.sm}`}>
-            <div className='container'>
-              <div className='row'>
+          <div className={`${width.top.m} ${width.top.sm} ${width.top.xs}`}>
                 <Topic
                   topic={this.state.currentTopic}
                   topicQs={qLists[this.state.currentTopic]}
                 />
-              </div>
-            </div>
           </div>
         </div>
       </div>
