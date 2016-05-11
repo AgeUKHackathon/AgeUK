@@ -4,6 +4,12 @@ const styles = {
   img: {
     maxWidth: '35%',
     float: 'right'
+  },
+  li: {
+    height: '10vh'
+  },
+  a: {
+    height: '10vh',
   }
 }
 
@@ -36,8 +42,8 @@ class Navigation extends Component {
         {this.props.info.map(theme => {
           return (
             this.props.type === 'theme'
-              ? <li className={this.checkActive(theme)} key={theme}>
-                  <a onClick={(e) => this.handleSelect(e, theme)} >
+              ? <li className={this.checkActive(theme)} key={theme} style={styles.li}>
+                  <a onClick={(e) => this.handleSelect(e, theme)} style={styles.a}>
                     {theme} <img src={this.props.icons[theme]} style={styles.img}/>
                   </a>
                 </li>
