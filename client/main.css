@@ -1,7 +1,16 @@
 /* CSS declarations go here */
 
+* {
+  color: #545454;
+}
+
+a {
+  color: #724B89;
+}
+
 h1 {
   font-weight: bold;
+  font-size: 3em;
   font-family: 'Alegreya Sans', sans-serif;
 }
 
